@@ -5,7 +5,7 @@ function Blob({ className }) {
   return (
     <div
       className={cn(
-        "absolute rounded-full mix-blend-lighten filter blur-3xl opacity-40 -z-40 animate-none",
+        "absolute rounded-full mix-blend-lighten filter blur-3xl opacity-70 -z-40 animate-none",
         className
       )}
     />
