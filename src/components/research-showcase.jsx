@@ -96,7 +96,7 @@ export default function ResearchShowcase() {
     const handleScrollContainer = () => {
       if (scrollContainerRef.current) {
         const scrollTop = scrollContainerRef.current.scrollTop
-        const sectionHeight = window.innerHeight * 1.5
+        const sectionHeight = scrollContainerRef.current.clientHeight
         const newIndex = Math.round(scrollTop / sectionHeight)
         if (newIndex !== currentPaperIndex && newIndex >= 0 && newIndex < researchPapers.length) {
           setCurrentPaperIndex(newIndex)
@@ -114,33 +114,33 @@ export default function ResearchShowcase() {
   const currentPaper = researchPapers[currentPaperIndex]
 
   return (
-    <div className="relative bg-black min-h-screen">
+    <div className="relative bg-black min-h-screen w-full flex items-center justify-center" id="research">
       {/* Main Research Showcase */}
-      <section className="relative h-screen overflow-hidden bg-black">
+      <section className="relative h-screen overflow-hidden bg-black w-[90%]">
         {/* Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-[#3A0CA3]/20 rounded-full blur-xl"></div>
-          <div className="absolute top-40 right-20 w-48 h-48 bg-[#560BAD]/30 rounded-full blur-2xl"></div>
+          <div className="absolute top-20 left-10 w-32 h-32 bg-[#1000DE]/20 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-48 h-48 bg-[#1000DE]/30 rounded-full blur-2xl"></div>
           <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative z-10 h-full flex">
-          {/* ✅ Left Panel: fixed with explicit width */}
-          <div className="relative top-0 left-0 h-screen w-[400px] flex items-center justify-center px-12">
-            <div className="space-y-8 max-w-lg">
+        <div className="relative z-10 h-full grid grid-cols-12 gap-0">
+          {/* Left Panel: Using grid system for better alignment */}
+          <div className="col-span-4 h-screen flex items-center justify-center px-8 lg:px-12">
+            <div className="space-y-8 max-w-sm w-full">
               <div className="space-y-4">
                 <div
                   className="transition-all duration-500 ease-in-out"
                   key={`conference-${currentPaper.id}`}
                   style={{ animation: "fadeInUp 0.5s ease-out" }}
                 >
-                  <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                  <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
                     {currentPaper.conferenceName}
                     <br />
-                    <span className="text-[#3A0CA3]">{currentPaper.conferenceSubtitle}</span>
+                    <span className="text-neutral-600">{currentPaper.conferenceSubtitle}</span>
                   </h1>
                 </div>
-                <p className="text-white/70 text-lg">San Francisco, California</p>
+                <p className="text-white/70 text-base lg:text-lg">San Francisco, California</p>
               </div>
 
               <div className="space-y-6">
@@ -149,24 +149,24 @@ export default function ResearchShowcase() {
                     <div
                       key={index}
                       className={`h-1 rounded-full transition-all duration-300 ${
-                        index === currentPaperIndex ? "bg-[#3A0CA3] w-16" : "bg-white/30 w-8"
+                        index === currentPaperIndex ? "bg-[#1000DE]/40 w-16" : "bg-white/30 w-8"
                       }`}
                     />
                   ))}
                 </div>
               </div>
 
-              <Button className="bg-[#3A0CA3] text-white hover:bg-[#560BAD] px-8 py-3 text-lg font-semibold transition-all duration-300 shadow-lg shadow-[#3A0CA3]/25">
+              {/* <Button className="bg-[#1000DE]/25 cursor-pointer text-white hover:bg-[#1000DE]/35 px-6 py-3 text-sm lg:text-base font-semibold transition-all duration-300 shadow-lg shadow-[#3A0CA3]/25">
                 READ FULL PAPER
-              </Button>
+              </Button> */}
             </div>
           </div>
 
-          {/* ✅ Right Panel: margin-left equal to left fixed width */}
-          <div className="relative ml-[400px] w-full">
+          {/* Right Panel: Using grid system for better alignment */}
+          <div className="col-span-8 h-screen relative">
             <div
               ref={scrollContainerRef}
-              className="h-screen overflow-y-auto overflow-x-hidden snap-y snap-mandatory scrollbar-hide"
+              className="absolute inset-0 overflow-y-auto overflow-x-hidden snap-y snap-mandatory scrollbar-hide"
               style={{ scrollSnapType: "y mandatory", scrollBehavior: "smooth" }}
             >
               {researchPapers.map((paper, index) => (
@@ -174,25 +174,27 @@ export default function ResearchShowcase() {
                   key={paper.id}
                   data-paper-section
                   data-index={index}
-                  className="min-h-[150vh] flex items-center justify-center px-8 py-24 snap-start"
+                  className="h-screen flex items-center justify-center px-6 lg:px-8 snap-start"
                 >
-                  <div className="space-y-8 max-w-6xl w-full">
+                  <div className="space-y-6 max-w-4xl w-full">
                     <div
-                      className="relative bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm rounded-3xl px-8 py-16 border transition-all duration-300 hover:scale-105"
+                      className="relative bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm rounded-3xl px-6 lg:px-8 py-12 lg:py-16 border transition-all duration-300 hover:scale-[1.02]"
                       style={{
-                        borderColor: `${paper.color}40`,
+                        borderColor: `#1000DE40`,
                         boxShadow: `0 0 30px ${paper.color}20, inset 0 0 30px ${paper.color}10`,
                       }}
                     >
-                      <h3 className="text-xl md:text-2xl font-bold text-white mb-8 leading-tight">{paper.title}</h3>
+                      <h3 className="text-lg lg:text-xl xl:text-2xl font-bold text-white mb-6 lg:mb-8 leading-tight">
+                        {paper.title}
+                      </h3>
 
-                      <div className="mb-8">
+                      <div className="mb-6 lg:mb-8">
                         <p className="text-white/70 text-sm mb-2">Authors:</p>
                         <p className="text-white/90 text-sm">{paper.authors.join(" • ")}</p>
                       </div>
 
-                      <div className="mb-8">
-                        <div className="flex items-center space-x-3">
+                      <div className="mb-6 lg:mb-8">
+                        {/* <div className="flex items-center space-x-3">
                           <div
                             className="w-4 h-4 rounded-sm border border-white/20"
                             style={{
@@ -201,18 +203,21 @@ export default function ResearchShowcase() {
                             }}
                           ></div>
                           <span className="text-white/80 text-xs font-medium">Research Paper</span>
-                        </div>
+                        </div> */}
                       </div>
 
-                      <p className="text-white/70 text-xs leading-relaxed mb-8">{paper.abstract}</p>
+                      <p className="text-white/70 text-sm mb-2">Overview:</p>
+                      <p className="text-white/70 text-xs lg:text-sm leading-relaxed mb-6 lg:mb-8">
+                        {paper.abstract}
+                      </p>
 
-                      <div
+                      {/* <div
                         className="absolute -top-3 -right-3 w-8 h-8 rounded-full opacity-60"
                         style={{
-                          backgroundColor: paper.color,
+                          backgroundColor: "#1000DE70",
                           boxShadow: `0 0 20px ${paper.color}80`,
                         }}
-                      ></div>
+                      ></div> */}
                     </div>
 
                     <div className="flex justify-between items-center px-4">
@@ -225,7 +230,7 @@ export default function ResearchShowcase() {
                           ></div>
                         ))}
                       </div>
-                      <div className="text-white/40 text-xs font-mono">{new Date().getFullYear()} • PEER REVIEWED</div>
+                      {/* <div className="text-white/40 text-xs font-mono">{new Date().getFullYear()} • PEER REVIEWED</div> */}
                     </div>
                   </div>
                 </div>
@@ -234,12 +239,12 @@ export default function ResearchShowcase() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 right-1/3 transform -translate-x-1/2 text-white/40">
+        {/* <div className="absolute bottom-8 right-8 text-white/40">
           <div className="flex flex-col items-center space-y-2">
             <span className="text-sm">Scroll vertically</span>
             <ChevronDown className="w-4 h-4 animate-bounce" />
           </div>
-        </div>
+        </div> */}
       </section>
 
       <style jsx>{`

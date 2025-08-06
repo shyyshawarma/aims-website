@@ -70,7 +70,7 @@ export const NavItems = ({ items, className, onItemClick }) => {
           key={idx}
           href={item.link}
           onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
+          onClick={(e) => onItemClick && onItemClick(e, item.link)}
           className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
         >
           {hovered === idx && (
@@ -139,20 +139,31 @@ export const MobileNavToggle = ({ isOpen, onClick }) =>
     <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
   );
 
-export const NavbarLogo = () => (
-  <a
-    href="#"
-    className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm"
-  >
-    <img
-      src="/file.svg"
-      alt="logo"
-      width={40}
-      height={40}
-    />
-    <span className="font-medium text-black dark:text-white">AIMS-DTU</span>
-  </a>
-);
+export const NavbarLogo = () => {
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <a
+      href="#"
+      onClick={handleLogoClick}
+      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm"
+    >
+      <img
+        src="/logo-transparent.svg"
+        alt="logo"
+        width={40}
+        height={40}
+      />
+      <span className="font-medium text-black dark:text-white">AIMS-DTU</span>
+    </a>
+  );
+};
 
 export const NavbarButton = ({
   href,

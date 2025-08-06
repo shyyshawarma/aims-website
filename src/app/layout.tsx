@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 
 const orbitron = Orbitron({ 
   subsets: ["latin"],
@@ -9,7 +10,7 @@ const orbitron = Orbitron({
 
 export const metadata: Metadata = {
   title: "AIMS-DTU",
-  description: "Official Website for the AIMS Society at DTU.",
+  description: "Artificial Intelligence and Machine Learning Society of DTU",
 };
 
 export default function RootLayout({
@@ -19,7 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={orbitron.variable}>{children}</body>
+      <Head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </Head>
+      
+      <body className={`${orbitron.variable}`}>{children}</body>
     </html>
   );
 }

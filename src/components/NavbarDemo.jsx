@@ -14,20 +14,47 @@ import { useState } from "react";
 
 export default function NavbarDemo() {
   const navItems = [
-    { name: "Motos", link: "#motos" },
-    { name: "Projects", link: "#projects" },
-    { name: "Research", link: "#research" },
+    { name: "Our Motos", link: "#motos" },
+    // { name: "Projects", link: "#projects" },
     { name: "Flagships", link: "#flagships" },
-    { name: "Achievements", link: "#achievements" },
-    { name: "Our team", link: "#ourteam" },
+    { name: "Research", link: "#research" },
+    // { name: "Achievements", link: "#achievements" },
+    // { name: "Our team", link: "#ourteam" },
   ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleNavClick = (e, link) => {
+    e.preventDefault();
+    const target = document.querySelector(link);
+    if (target) {
+      const offset = 100; // Account for fixed navbar height
+      const targetPosition = target.offsetTop - offset;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleMobileNavClick = (e, link) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    const target = document.querySelector(link);
+    if (target) {
+      const offset = 100; // Account for fixed navbar height
+      const targetPosition = target.offsetTop - offset;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <Navbar>
       <NavBody>
         <NavbarLogo />
-        <NavItems items={navItems} />
+        <NavItems items={navItems} onItemClick={handleNavClick} />
 
         <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block">
   <span className="absolute inset-0 overflow-hidden rounded-full">
@@ -56,7 +83,7 @@ export default function NavbarDemo() {
       />
     </svg>
   </div>
-  <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
+  <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-[#1000DE]/55 via-[#1000DE]/40 to-[#1000DE]/25 transition-opacity duration-500 group-hover:opacity-40" />
 </button>
         
         
@@ -76,7 +103,7 @@ export default function NavbarDemo() {
             <a
               key={idx}
               href={item.link}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleMobileNavClick(e, item.link)}
               className="text-neutral-600 dark:text-neutral-300"
             >
               {item.name}

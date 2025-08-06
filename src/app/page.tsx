@@ -8,6 +8,8 @@ import Blob from "../components/blob";
 import NavbarDemo from "../components/NavbarDemo";
 import {SpotlightNewDemo} from "../components/SpotlightNewDemo";
 import {TimelineDemo} from "../components/timeline";
+import Section from "../components/Section";
+
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700", "800"] });
 
 export default function Home() {
@@ -18,18 +20,18 @@ export default function Home() {
       <NavbarDemo />
 
       {/* ✅ Blobs */}
-      <div className="relative inset-0 -z-50">
-        <Blob className="top-30 left-20 w-64 h-64 bg-[#1000DE]/30" />
-        <Blob className="top-40 right-50 w-90 h-80 bg-[#1000DE]/30" />
-        <Blob className="top-120 right-200 w-96 h-64 bg-[#1000DE]/30" />
-        <Blob className="top-130 right-2 w-96 h-64 bg-[#1000DE]/30" />
-        <Blob className="bottom-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-[#1000DE]/25" />
+      <div className="relative inset-0 z-0">
+        <Blob className="top-0 left-0 scale-200" />
+        <Blob className="top-20 right-30" />
+        <Blob className="top-120 right-200 w-96 h-64" />
+        <Blob className="top-130 right-2 w-96 h-64" />
       </div>
 
       
       <SpotlightNewDemo />
+      <Section />
       <TimelineDemo />
-      <TeamsContact />
+      {/* <TeamsContact /> */}
       <ResearchShowcase />
      
 

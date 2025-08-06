@@ -1,6 +1,7 @@
 "use client";
 import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
+import Blob from "../blob";
 
 export const Timeline = ({ data }) => {
   const ref = useRef(null);
@@ -23,9 +24,17 @@ export const Timeline = ({ data }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="w-full bg-black font-sans md:px-10" ref={containerRef}>
+    <div className="relative w-full bg-transparent font-sans md:px-10" ref={containerRef}>
+      <Blob className="top-[10%] left-0 scale-200" />
+      <Blob className="top-[20%] right-0 scale-150" />
+      <Blob className="top-[33%] left-0 scale-100" />
+      <Blob className="top-[45%] -right-[10%] scale-100" />
+      <Blob className="top-[60%] -left-[10%] scale-200" />
+      <Blob className="top-[80%] -right-[15%] scale-250" />
+      <Blob className="bottom-0 -left-[5%] scale-100" />
+
       <div className="max-w-7xl mx-auto pt-20 pb-10 px-4 md:px-8 lg:px-10">
-        <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+        <h1 className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           OUR FLAGSHIPS
         </h1>
       </div>
@@ -38,7 +47,7 @@ export const Timeline = ({ data }) => {
           >
             {/* LEFT: sticky dot + heading + text */}
             <div className="sticky top-40 z-40 flex-shrink-0 flex flex-col items-start max-w-xs lg:max-w-sm w-full">
-              <div className="h-10 absolute left-3 w-10 rounded-full bg-black flex items-center justify-center">
+              <div className="h-10 absolute left-3 w-10 rounded-full bg-transparent flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-800 border border-neutral-700 p-2" />
               </div>
               <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-400">
@@ -80,7 +89,7 @@ export const Timeline = ({ data }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
+            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-[#1000DE]/50 via-[#1000DE]/70 to-transparent rounded-full"
           />
         </div>
       </div>
