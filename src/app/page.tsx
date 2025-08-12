@@ -9,6 +9,7 @@ import NavbarDemo from "../components/NavbarDemo";
 import {SpotlightNewDemo} from "../components/SpotlightNewDemo";
 import {TimelineDemo} from "../components/timeline";
 import Section from "../components/Section";
+import Footer from "../components/contactus";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700", "800"] });
 
@@ -33,6 +34,8 @@ export default function Home() {
       <TimelineDemo />
       {/* <TeamsContact /> */}
       <ResearchShowcase />
+
+      <Footer />
      
 
 
