@@ -1,95 +1,103 @@
-import { Heart, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
+import { IconBrandInstagram, IconBrandLinkedin, IconBrandDiscord } from "@tabler/icons-react";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col relative items-center justify-center border-t border-border pt-16 pb-8 px-6 lg:px-8 w-full max-w-6xl mx-auto lg:pt-32">
-      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:gap-8 w-full">
-        
-        {/* Logo & Tagline */}
-        <div className="flex flex-col items-start justify-start">
-          <div className="flex items-start">
-            <img
-              src="/icons/viewr_logo.svg"
-              alt="ViewR"
-              width={28}
-              height={28}
-              className="w-7 h-7"
-            />
-          </div>
-          <p className="text-muted-foreground mt-4 text-sm text-start">
-            Leading provider of advanced security solutions for businesses and homes.
-          </p>
-          <span className="mt-4 text-neutral-200 text-sm flex items-center">
-            Made in India with
-            <Heart className="w-3.5 h-3.5 ml-1 fill-primary text-primary" />
-          </span>
-        </div>
+    <footer className="bg-background">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 pt-16 pb-8 lg:pt-24">
+        {/* Top Border */}
+        <div className="border-t border-border w-full mx-auto mb-12"></div>
 
-        {/* Quick Links */}
-        <div className="flex flex-col">
-          <h3 className="text-base font-medium text-white">Quick Links</h3>
-          <ul className="mt-4 text-sm text-muted-foreground">
-            <li className="mt-2"><a href="#products" className="hover:text-foreground transition-all duration-300">Products</a></li>
-            <li className="mt-2"><a href="#solutions" className="hover:text-foreground transition-all duration-300">Solutions</a></li>
-            <li className="mt-2"><a href="#about" className="hover:text-foreground transition-all duration-300">About Us</a></li>
-            <li className="mt-2"><a href="#testimonials" className="hover:text-foreground transition-all duration-300">Testimonials</a></li>
-          </ul>
-        </div>
+        {/* Top Section */}
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8 text-center lg:text-left">
 
-        {/* Contact Us */}
-        <div className="flex flex-col">
-          <h3 className="text-base font-medium text-white">Contact Us</h3>
-          <ul className="mt-4 text-sm text-muted-foreground space-y-3">
-            <li>
-              <a href="mailto:help@viewr.in" className="hover:text-foreground transition-all duration-300 flex items-center gap-2 group">
-                <div className="w-6 h-6 flex items-center justify-center">
+          {/* Left side: Logo + Contact */}
+          <div className="flex flex-col sm:flex-row items-center lg:items-start gap-8">
+            {/* Logo */}
+            <div className="flex flex-col items-center lg:items-start">
+              <img
+                src="/image.png"
+                alt="AIMS"
+                className="w-[200px] aspect-[4/3] object-contain"
+              />
+            </div>
+
+            {/* Contact Us */}
+            <div>
+              <h3 className="text-base font-medium text-white">Contact Us</h3>
+              <ul className="mt-4 text-sm text-muted-foreground space-y-3">
+                <li className="flex items-center justify-center lg:justify-start gap-2">
                   <Mail className="w-4 h-4" />
-                </div>
-                <span>help@viewr.in</span>
-              </a>
-            </li>
-            <li>
-              <a href="tel:+919891367183" className="hover:text-foreground transition-all duration-300 flex items-center gap-2 group">
-                <div className="w-6 h-6 flex items-center justify-center">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <span>+91 98913 67183</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://maps.app.goo.gl/bdrULHZTvYASArDQ6" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-all duration-300 flex items-start gap-2 group">
-                <div className="w-6 h-6 flex items-center justify-center shrink-0 mt-1">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <span>
-                  Tower 4, DLF CORPORATE GREENS, 2114-17, Sector 74A, Gurugram,
-                  Haryana 122004
-                </span>
-              </a>
-            </li>
-          </ul>
+                  <a
+                    href="mailto:aims@dtu.ac.in"
+                    className="hover:text-foreground transition-all"
+                  >
+                    aims@dtu.ac.in
+                  </a>
+                </li>
+
+                <li className="flex items-start justify-center lg:justify-start gap-2">
+                  <MapPin className="w-4 h-4 mt-1" />
+                  <a
+                    href="https://maps.app.goo.gl/example"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-foreground transition-all leading-snug max-w-xs"
+                  >
+                    Delhi Technological University, Shahbad Daulatpur, Rohini, Delhi 110042
+                  </a>
+                </li>
+              </ul>
+
+              {/* Social Buttons */}
+              <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+              <div className="flex justify-center items-center gap-6">
+                <button className="flex items-center justify-center h-10 w-10 rounded-md bg-gray-50 dark:bg-zinc-900 shadow-input dark:shadow-[0px_0px_1px_1px_#262626]">
+                  <IconBrandInstagram className="h-5 w-5 text-neutral-800 dark:text-neutral-300" />
+                </button>
+                <button className="flex items-center justify-center h-10 w-10 rounded-md bg-gray-50 dark:bg-zinc-900 shadow-input dark:shadow-[0px_0px_1px_1px_#262626]">
+                  <IconBrandLinkedin className="h-5 w-5 text-neutral-800 dark:text-neutral-300" />
+                </button>
+                <button className="flex items-center justify-center h-10 w-10 rounded-md bg-gray-50 dark:bg-zinc-900 shadow-input dark:shadow-[0px_0px_1px_1px_#262626]">
+                  <IconBrandDiscord className="h-5 w-5 text-neutral-800 dark:text-neutral-300" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Map Section */}
+          <div className="w-full lg:w-[350px] h-[200px] rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.234942317017!2d77.11871327549691!3d28.750217075623098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d013f013b8b0b%3A0x1ec6a6d6e3b2a8a0!2sDelhi%20Technological%20University!5e0!3m2!1sen!2sin!4v1693999999999!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
 
-        {/* Company */}
-        <div className="flex flex-col">
-          <h3 className="text-base font-medium text-white">Company</h3>
-          <ul className="mt-4 text-sm text-muted-foreground">
-            <li><a href="#about" className="hover:text-foreground transition-all duration-300">About Us</a></li>
-            <li className="mt-2"><a href="/privacy-policy" className="hover:text-foreground transition-all duration-300">Privacy Policy</a></li>
-            <li className="mt-2"><a href="/terms-conditions" className="hover:text-foreground transition-all duration-300">Terms & Conditions</a></li>
-            <li className="mt-2"><a href="#contact" className="hover:text-foreground transition-all duration-300">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="mt-8 border-t border-border/40 pt-4 md:pt-8 md:flex md:items-center md:justify-between w-full">
-        <p className="text-sm text-muted-foreground mt-8 md:mt-0">
-          &copy; {new Date().getFullYear()} Novalance Private Limited. All rights reserved.
-        </p>
-        <div className="flex space-x-6 mt-4 md:mt-0">
-          <a href="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a>
-          <a href="/terms-conditions" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms of Service</a>
+        {/* Bottom Bar */}
+        <div className="mt-12 border-border/40 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground text-center md:text-left">
+            &copy; {new Date().getFullYear()} AIMS DTU. All rights reserved.
+          </p>
+          <div className="flex space-x-6">
+            <a
+              href="#privacy"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#terms"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Terms of Service
+            </a>
+          </div>
         </div>
       </div>
     </footer>
