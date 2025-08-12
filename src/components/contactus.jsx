@@ -1,5 +1,9 @@
 import { Mail, MapPin } from "lucide-react";
-import { IconBrandInstagram, IconBrandLinkedin, IconBrandDiscord } from "@tabler/icons-react";
+import {
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandDiscord,
+} from "@tabler/icons-react";
 
 const Footer = () => {
   return (
@@ -10,7 +14,6 @@ const Footer = () => {
 
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8 text-center lg:text-left">
-
           {/* Left side: Logo + Contact */}
           <div className="flex flex-col sm:flex-row items-center lg:items-start gap-8">
             {/* Logo */}
@@ -44,23 +47,41 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="hover:text-foreground transition-all leading-snug max-w-xs"
                   >
-                    Delhi Technological University, Shahbad Daulatpur, Rohini, Delhi 110042
+                    Delhi Technological University, Shahbad Daulatpur, Rohini,
+                    Delhi 110042
                   </a>
                 </li>
               </ul>
 
+              {/* Divider */}
+              <div className="my-6 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+
               {/* Social Buttons */}
-              <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
-              <div className="flex justify-center items-center gap-6">
-                <button className="flex items-center justify-center h-10 w-10 rounded-md bg-gray-50 dark:bg-zinc-900 shadow-input dark:shadow-[0px_0px_1px_1px_#262626]">
+              <div className="flex justify-center  items-center gap-6">
+                <a
+                  href="https://www.instagram.com/aimsdtu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center h-10 w-10 rounded-md bg-gray-50 dark:bg-zinc-900 shadow-input dark:shadow-[0px_0px_1px_1px_#262626]"
+                >
                   <IconBrandInstagram className="h-5 w-5 text-neutral-800 dark:text-neutral-300" />
-                </button>
-                <button className="flex items-center justify-center h-10 w-10 rounded-md bg-gray-50 dark:bg-zinc-900 shadow-input dark:shadow-[0px_0px_1px_1px_#262626]">
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/aims-dtu/posts/?feedView=all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center h-10 w-10 rounded-md bg-gray-50 dark:bg-zinc-900 shadow-input dark:shadow-[0px_0px_1px_1px_#262626]"
+                >
                   <IconBrandLinkedin className="h-5 w-5 text-neutral-800 dark:text-neutral-300" />
-                </button>
-                <button className="flex items-center justify-center h-10 w-10 rounded-md bg-gray-50 dark:bg-zinc-900 shadow-input dark:shadow-[0px_0px_1px_1px_#262626]">
+                </a>
+                <a
+                  href="https://discord.com/invite/cuNDB8TeeJ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center h-10 w-10 rounded-md bg-gray-50 dark:bg-zinc-900 shadow-input dark:shadow-[0px_0px_1px_1px_#262626]"
+                >
                   <IconBrandDiscord className="h-5 w-5 text-neutral-800 dark:text-neutral-300" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
