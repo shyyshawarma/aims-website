@@ -10,55 +10,58 @@ export default function ResearchShowcase() {
   const scrollContainerRef = useRef(null)
 
   const researchPapers = [
-    {
-      id: 1,
-      title: "Quantum Computing Applications in Machine Learning Optimization",
-      conferenceName: "QUANTUM COMPUTING",
-      conferenceSubtitle: "SYMPOSIUM",
-      authors: ["Dr. Sarah Chen", "Prof. Michael Rodriguez", "Dr. Aisha Patel"],
-      color: "#3A0CA3",
-      abstract:
-        "This research explores the intersection of quantum computing and machine learning, presenting novel optimization techniques that leverage quantum superposition and entanglement.",
-    },
+    // {
+    //   id: 1,
+    //   title: "Boosting ML techniques for Dementia Prediction Using Modifiable and Non-Modifiable Risk Factors",
+    //   conferenceName: "AAIC Neuroscience Next 2025",
+    //   conferenceSubtitle: "",
+    //   authors: ["Dr. Sarah Chen", "Prof. Michael Rodriguez", "Dr. Aisha Patel"],
+    //   color: "#3A0CA3",
+    //   abstract:
+    //     "This research explores the intersection of quantum computing and machine learning, presenting novel optimization techniques that leverage quantum superposition and entanglement.",
+    // },
     {
       id: 2,
-      title: "Neural Network Architecture for Real-Time Data Processing",
-      conferenceName: "AI & MACHINE",
-      conferenceSubtitle: "LEARNING",
-      authors: ["Dr. James Wilson", "Dr. Lisa Zhang", "Prof. Robert Kim"],
+      title: "IllumiCurveNet: Low-Light Image Enhancement of Lunar Permanently Shadowed Regions Using a Self-Guided Loss Framework",
+      conferenceName: "IJCNN 2025",
+      conferenceSubtitle: "",
+      authors: ["Saksham Jain", "Sparsh Jain", "Ashish Prajapati","Garvit Singh","Dinesh K. Vishwakarma"],
       color: "#560BAD",
       abstract:
-        "We present a novel neural network architecture optimized for real-time processing, featuring adaptive layer structures and dynamic resource allocation mechanisms.",
+        "IllumiCurveNet enhances lunar PSR images suffering from low visibility, poor contrast, and noise using an encoder–decoder with spatial attention, dilated convolutions, and adaptive gamma correction. A self-guided loss framework ensures texture preservation, contrast enhancement, and consistency. It achieves state-of-the-art results without paired data, aiding lunar mapping, navigation, and resource exploration.",
     },
     {
       id: 3,
-      title: "Blockchain Integration in Distributed AI Systems",
-      conferenceName: "BLOCKCHAIN",
-      conferenceSubtitle: "TECHNOLOGY",
-      authors: ["Dr. Maria Santos", "Prof. David Lee", "Dr. Ahmed Hassan"],
+      title: "Autonomous Cheating Detection for Online Examinations using Knowledge Distillation and Multitask Learning",
+      conferenceName: "ICCCNT 2025",
+      conferenceSubtitle: "",
+      authors: ["Vansh Sachdeva", "Shashvat Singhal", "Dinesh K. Vishwakarma"],
       color: "#3A0CA3",
       abstract:
-        "This paper introduces a framework for integrating blockchain technology with distributed AI systems, addressing security, transparency, and trust issues.",
+        "This study proposes a deep learning-based real-time cheating detection system for online exams, integrating pose detection (PoseNet), eye tracking (Mediapipe Iris), and facial expression recognition (Vision Transformer). Using multi-task learning with knowledge distillation, the lightweight model achieved 83.5% accuracy and 0.82 F1-score, prioritizing recall to ensure secure remote assessments.",
     },
+    
     {
       id: 4,
-      title: "Cybersecurity in Edge Computing Environments",
-      conferenceName: "CYBERSECURITY",
-      conferenceSubtitle: "CONFERENCE",
-      authors: ["Dr. Elena Petrov", "Prof. John Martinez", "Dr. Wei Chen"],
-      color: "#560BAD",
-      abstract:
-        "We propose a multi-layered security framework specifically designed for edge computing environments, incorporating AI-driven threat detection and response systems.",
-    },
-    {
-      id: 5,
-      title: "Sustainable Computing: Green Algorithms for Data Centers",
-      conferenceName: "SUSTAINABLE",
-      conferenceSubtitle: "COMPUTING",
-      authors: ["Dr. Anna Kowalski", "Prof. Thomas Brown", "Dr. Raj Patel"],
+      title: "Audio Based Machine Fault Diagnosis using Hybrid Feature Extraction and Ensemble Learing",
+      conferenceName: "ICCCNT 2024",
+      conferenceSubtitle: "",
+      authors: ["Shashvat Singhal", "Bhavya Goel", "Kshitij Agrawal","Rithwick Sethi","Shashi Sah","Rachit Jain","Dinesh K. Vishwakarma"],
       color: "#3A0CA3",
       abstract:
-        "This research presents innovative green algorithms that significantly reduce energy consumption in data centers while maintaining computational performance.",
+        "This research detects machine faults through audio analysis, applying STFT and extracting features like Mel spectrogram, spectral kurtosis, and spectral centroid. These features are classified using algorithms including XBoost, SVC, and Random Forest. Testing on the MIMI dataset showed XBoost achieved the highest accuracy, reaching 98% in fault classification.",
+    },
+    
+    
+    {
+      id: 5,
+      title: "DSeP-xNet: A Feature Optimized Ensemble Framework for Hyperspectral-Based Soil Organic Carbon Prediction",
+      conferenceName: "IEEE ARIIA 2024",
+      conferenceSubtitle: "",
+      authors: ["Akshyat Shah", "Shashi Sah", "Shashvat Singhal", "Shagun Jain"],
+      color: "#560BAD",
+      abstract:
+        "This paper presents DSeP-xNet, a soil organic carbon prediction framework combining preprocessing (Savitzky–Golay filtering, XGBoost feature selection) with a stacking ensemble of DNN, SE-CNN, and other models. By emphasizing noise removal and optimal feature selection, it enhances prediction accuracy, supporting smart agriculture through precise soil nutrient assessment.",
     },
   ]
 
@@ -140,7 +143,7 @@ export default function ResearchShowcase() {
                     <span className="text-neutral-600">{currentPaper.conferenceSubtitle}</span>
                   </h1>
                 </div>
-                <p className="text-white/70 text-base lg:text-lg">San Francisco, California</p>
+                
               </div>
 
               <div className="space-y-6">

@@ -14,7 +14,7 @@ import { useState } from "react";
 
 export default function NavbarDemo() {
   const navItems = [
-    { name: "Our Motos", link: "#motos" },
+    { name: "Our Mottos", link: "#motos" },
     // { name: "Projects", link: "#projects" },
     { name: "Flagships", link: "#flagships" },
     { name: "Research", link: "#research" },
@@ -63,7 +63,16 @@ export default function NavbarDemo() {
   <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
     <span>
       <div className="flex items-center gap-4">
-          <NavbarButton variant="secondary">Contact us</NavbarButton>
+         <NavbarButton
+  as="a"
+  href="https://in.linkedin.com/company/aims-dtu"
+  target="_blank"
+  rel="noopener noreferrer"
+  variant="secondary"
+>
+  Contact us
+</NavbarButton>
+
          
         </div>
     </span>

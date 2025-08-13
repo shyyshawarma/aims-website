@@ -6,15 +6,25 @@ export function TimelineDemo() {
     {
       title: "brAInwave",
       text: (
-        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-          Built and launched and from scratch
+        <div>
+          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+          brAInwave is a 30-hour hackathon by AIMS-DTU, designed to push the limits of innovation. 
         </p>
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+            Over two days, participants engage in insightful speeches, intense coding, and thorough project evaluations,expert mentorship, providing an ideal platform to showcase their skills and creativity.
+        </p>
+        
+        <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+            With a reach of over 20K individuals, AIMS-DTU offers excellent visibility.
+        </p>
+        </div>
+        
       ),
       images: [
-        "https://assets.aceternity.com/templates/startup-1.webp",
-        "https://assets.aceternity.com/templates/startup-2.webp",
-        "https://assets.aceternity.com/templates/startup-3.webp",
-        "https://assets.aceternity.com/templates/startup-4.webp",
+        "/brainwavegroup.jpg",
+        "/brainwavebraudi.jpg",
+        "/brainwavejudge.JPG",
+        "/trophies.png",
       ],
     },
     {
@@ -22,52 +32,38 @@ export function TimelineDemo() {
       text: (
         <>
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            I usually run out of copy, but when I see content this big, I try to
-            integrate lorem ipsum.
+            Deep learning-based hackathon, challenging participants to develop groundbreaking solutions for real-world problems . 
           </p>
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Lorem ipsum is for people who are too lazy to write copy. But we are
-            not. Here are some more examples of beautiful designs I built.
+            The primary objective is to foster a culture of ingenuity, collaboration, and continuous growth in the AI community. It consists of multiple tracks including NLP, Computer Vision and much more.
           </p>
+          
         </>
       ),
       images: [
-        "https://assets.aceternity.com/pro/hero-sections.png",
-        "https://assets.aceternity.com/features-section.png",
-        "https://assets.aceternity.com/pro/bento-grids.png",
-        "https://assets.aceternity.com/cards.png",
+        "/igts.jpg",
+        "/visionxtrop.png",
+        "/devcraft1.png",
+        "visionx.png",
       ],
     },
     {
       title: "Synaptix",
       text: (
         <>
-          <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Deployed 5 new components on Aceternity today
+          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+            A high-stakes GenAI-focused competition with  innovative problem statements, designed to push your technical creativity. 
           </p>
-          <div className="mb-8">
-            {[
-              "✅ Card grid component",
-              "✅ Startup template Aceternity",
-              "✅ Random file upload lol",
-              "✅ Himesh Reshammiya Music CD",
-              "✅ Salman Bhai Fan Club registrations open",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
+          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+            From ideation to live implementation, compete across two intense rounds judged by industry experts and professors. 
+          </p>
         </>
       ),
       images: [
-        "https://assets.aceternity.com/pro/hero-sections.png",
-        "https://assets.aceternity.com/features-section.png",
-        "https://assets.aceternity.com/pro/bento-grids.png",
-        "https://assets.aceternity.com/cards.png",
+        "/adobevanshbhaiya.png",
+        "/adobeworkshop.png",
+        "/shaswatbhaiya.JPG",
+        "/winnerssynaptix.png",
       ],
     },
   ];
