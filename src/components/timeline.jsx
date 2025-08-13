@@ -21,9 +21,9 @@ export function TimelineDemo() {
         
       ),
       images: [
-        "/brainwavegroup.jpg",
-        "/brainwavebraudi.jpg",
-        "/brainwavejudge.JPG",
+        "/brainwavegroup.png",
+        "/brainwavebraudi.png",
+        "/brainwavejudge.png",
         "/trophies.png",
       ],
     },
@@ -41,7 +41,7 @@ export function TimelineDemo() {
         </>
       ),
       images: [
-        "/igts.jpg",
+        "/igts.png",
         "/visionxtrop.png",
         "/devcraft1.png",
         "visionx.png",
@@ -62,7 +62,7 @@ export function TimelineDemo() {
       images: [
         "/adobevanshbhaiya.png",
         "/adobeworkshop.png",
-        "/shaswatbhaiya.JPG",
+        "/shaswatbhaiya.png",
         "/winnerssynaptix.png",
       ],
     },
