@@ -12,8 +12,11 @@ export function FlipWordsDemo() {
         <br />
         Here, we focus on
         <FlipWords words={words} /> <br />
+
+        We are a community of innovators, researchers, and developers dedicated to pushing the boundaries of AI and ML.
         
       </div>
+      
 
   );
 }
